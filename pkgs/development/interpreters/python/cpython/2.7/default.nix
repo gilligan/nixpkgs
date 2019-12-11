@@ -235,7 +235,7 @@ in with passthru; stdenv.mkDerivation ({
         ln -s $out/share/man/man1/{python2.7.1.gz,python.1.gz}
 
         # Python on Nix is not manylinux1 compatible. https://github.com/NixOS/nixpkgs/issues/18484
-        echo "manylinux1_compatible=False" >> $out/lib/${libPrefix}/_manylinux.py
+        echo "manylinux1_compatible=True" >> $out/lib/${libPrefix}/_manylinux.py
 
         rm "$out"/lib/python*/plat-*/regen # refers to glibc.dev
 
